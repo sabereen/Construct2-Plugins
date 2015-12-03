@@ -1,7 +1,7 @@
 # :octocat: Node Downloader
 In the name of God, the Beneficent the Merciful.
 
-Node Downloader is a plugin for Construct 2 game engine that allows you to download a file from a URL and save it in the player's PCs.
+Node Downloader is a plugin for Construct 2 game engine that allows you to download a file from a URL and save it in the player's PC.
 
 :exclamation: Node Downloader only works with [NW.js](http://nwjs.io) (and [Electron](http://electron.atom.io)).
 
@@ -14,7 +14,7 @@ Also you can download sample .capx files from [here]().
 Starts download a file.
 
 | Parameter | Explanation                                       |
-| ------------------------------------------------------------- |
+| --------- | ------------------------------------------------- |
 | Tag       | An optional name to distinguish between downloads |
 | URL       | URL of file that is to be downloaded              |
 | Path      | Location that downloaded file will be saved to it |
@@ -24,7 +24,7 @@ Starts download a file.
 This event occurs once while the file downloaded and saved on the disk.
 ___
 #### On error
-If the file couldn't be downloaded for any reason this event will trigger and the reason of error logs in to console.
+If the file couldn't be downloaded for any reason this event will trigger and the reason of error logs in to the console.
 ___
 #### On progress
 Each file should be fragmented for downloading. After each slice of the file received, this event triggers and `Percent` expression will be accessible.
