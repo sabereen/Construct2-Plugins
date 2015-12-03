@@ -6,4 +6,4 @@ This plugin downloads a file from the web and saves it to user's PC.
 
 :exclamation: **Note**: Node Downloader only works in NW.js (and Electron).
 
-For more information go to **Node Downloader documentation**.
+For more information go to **[Node Downloader documentation](//github.com/sabereen/Construct2-Plugins/blob/master/nodeDownloader/README.md)**.
