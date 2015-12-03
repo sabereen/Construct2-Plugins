@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<c2addon>
+	<type>plugin</type>
+	<name>{{name}}</name>	
+	<version>{{version}}</version>
+	<author>{{author}}</author>
+	<website>http://www.scirra.com</website>
+	<documentation>https://www.scirra.com/manual/1/construct-2</documentation>
+	<description>{{description}}</description>
+</c2addon>
