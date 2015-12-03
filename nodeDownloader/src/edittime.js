@@ -56,7 +56,7 @@ function GetPluginSettings()
 
 // example
 AddStringParam("Tag", "A tag, which can be anything you like, to distinguish between different files.");
-AddCondition(0, cf_trigger, "On download completed", "Download", "On download <b>{0}</b> finished", "On download completed", "OnFinished");
+AddCondition(0, cf_trigger, "On completed", "Download", "On download <b>{0}</b> finished", "On download completed", "OnFinished");
 
 AddStringParam("Tag", "A tag, which can be anything you like, to distinguish between different files.");
 AddCondition(1, cf_trigger, "On progress", "Download", "On chunk data for <b>{0}</b> recieved.", "On chunk data recieved", "OnProgress");
@@ -77,7 +77,7 @@ AddCondition(2, cf_trigger, "On error", "Download", "On error in <b>{0}</b>", "o
 // example
 AddStringParam("Tag", "A tag, which can be anything you like, to distinguish between different files.");
 AddStringParam("URL", "Enter the URL of file", "\"http://\"");
-AddStringParam("Path", "Where to save downloaded file.", "\"D:/Islam.png\"");
+AddStringParam("Path", "Where to save downloaded file.");
 AddAction(0, af_none, "Start download a file", "Download", "Start downloading <b>{0}</b> from url <i>{1}</i> to <i>{2}</i>", "Start downloading a file", "StartDownload");
 
 ////////////////////////////////////////
@@ -95,7 +95,7 @@ AddAction(0, af_none, "Start download a file", "Download", "Start downloading <b
 //AddExpression(0, ef_return_number, "Leet expression", "My category", "MyExpression", "Return the number 1337.");
 AddExpression(0, ef_return_number, "percent", "Download", "Percent", "Percent of download file");
 
-AddStringParam("Tag", "A tag, which can be anything you like, to distinguish between different files.");
+AddStringParam("tag", "A tag, which can be anything you like, to distinguish between different files.");
 AddExpression(1, ef_return_number, "total size", "Download", "TotalSize", "Total size of the file, in bytes.");
 
 ////////////////////////////////////////
