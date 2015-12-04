@@ -1,7 +1,7 @@
 function GetPluginSettings()
 {
 	return {
-		"name":			"{{name}}",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
+		"name":			"{{fname}}",				// as appears in 'insert object' dialog, can be changed as long as "id" stays the same
 		"id":			"NodeDownloader",				// this is used to identify this plugin and is saved to the project; never change it
 		"version":		"{{version}}",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"{{description}}",

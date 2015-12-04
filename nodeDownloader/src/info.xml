@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <c2addon>
 	<type>plugin</type>
-	<name>{{name}}</name>
+	<name>{{fname}}</name>
 	<version>{{version}}</version>
 	<author>{{author}}</author>
 	<website>{{website}}</website>
