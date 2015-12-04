@@ -11,6 +11,7 @@ Node Downloader is a plugin for Construct 2 game engine that allows you to downl
 Or if you don't want the sample (.capx) files, download only .c2addon file from  [here](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/node-downloader-1.0.0.c2addon).
 
 ## Actions
+![Actions](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/shot/actions.png)
 #### Start download a file
 Starts download a file.
 
@@ -20,7 +21,10 @@ Starts download a file.
 | URL       | URL of file that is to be downloaded              |
 | Path      | Location that downloaded file will be saved to it |
 
+![start download](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/shot/start-download.png)
+
 ## Conditions
+![events](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/shot/events.png)
 #### On completed
 This event occurs once while the file downloaded and saved on the disk.
 ___
@@ -31,6 +35,7 @@ ___
 Each file should be fragmented for downloading. After each slice of the file received, this event triggers and `Percent` expression will be accessible.
 
 ## Expressions
+![expressions](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/shot/expressions.png)
 #### Percent
 Get the progress of downloading, from 0 to 100. This expression will be updated when a slice of the file received. So use it **_only_** in `On progress` event.
 ___
