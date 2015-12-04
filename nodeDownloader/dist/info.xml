@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <c2addon>
 	<type>plugin</type>
-	<name>Node Downloader</name>	
+	<name>Node Downloader</name>
 	<version>1.0.0</version>
 	<author>Mojtaba Qasemzade Tehrany</author>
-	<website>http://www.scirra.com</website>
-	<documentation>https://www.scirra.com/manual/1/construct-2</documentation>
+	<website>https://github.com/sabereen/Construct2-Plugins</website>
+	<documentation>https://github.com/sabereen/Construct2-Plugins/blob/master/nodeDownloader/README.md</documentation>
 	<description>A plugin for construct 2 to download files to disk (in NW.js or Electron).</description>
 </c2addon>

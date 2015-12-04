@@ -6,7 +6,7 @@ function GetPluginSettings()
 		"version":		"{{version}}",					// (float in x.y format) Plugin version - C2 shows compatibility warnings based on this
 		"description":	"{{description}}",
 		"author":		"{{author}}",
-		"help url":		"construct2.ir/plugins/node-downloader",
+		"help url":		"{{documentation}}",
 		"category":		"Platform specific",				// Prefer to re-use existing categories, but you can set anything here
 		"type":			"object",				// either "world" (appears in layout and is drawn), else "object"
 		// "rotatable":	true,					// only used when "type" is "world".  Enables an angle property on the object.

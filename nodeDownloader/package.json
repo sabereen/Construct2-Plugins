@@ -1,15 +1,16 @@
 {
   "name": "Node Downloader",
-  "version": "1.0.0",
+  "version": "1.0",
   "description": "A plugin for construct 2 to download files to disk (in NW.js or Electron).",
   "main": "src/runtime.js",
   "author": "Mojtaba Qasemzade Tehrany",
   "license": "MIT",
+  "documentation": "https://github.com/sabereen/Construct2-Plugins/blob/master/nodeDownloader/README.md",
+  "website": "https://github.com/sabereen/Construct2-Plugins",
   "devDependencies": {
     "gulp": "latest",
     "gulp-replace": "^0.5.4",
     "gulp-uglify": "^1.5.1",
-    "gulp-zip": "^3.0.2",
-    "merge-stream": "^1.0.0"
+    "gulp-zip": "^3.0.2"
   }
 }

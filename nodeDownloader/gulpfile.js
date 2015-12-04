@@ -32,8 +32,8 @@ gulp.task('info-xml', function () {
 
 gulp.task('c2addon', ['minify', 'copy-icon', 'info-xml'], function () {
   return gulp.src(['dist/**/*.js', 'dist/**/*.ico', 'dist/info.xml'])
-    .pipe(zip('node-downloader.c2addon'))
+    .pipe(zip('node-downloader-'+ info['version'] + '.c2addon'))
     .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['minify', 'copy-icon']);
+gulp.task('default', ['c2addon']);
