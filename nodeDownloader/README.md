@@ -31,7 +31,7 @@ Each file should be fragmented for downloading. After each slice of the file rec
 
 ## Expressions
 #### Percent
-Get the progress of downloading, from 0 to 100. This expression updates when a slice of the file received. So use it **_only_** in `On progress` event.
+Get the progress of downloading, from 0 to 100. This expression will be updated when a slice of the file received. So use it **_only_** in `On progress` event.
 ___
 #### TotalSize(tag)
 Get the total size of the file, in bytes. This expression is only accessible when downloading is in progress. So you can use it in `On progress` or `On completed` events. After that, it returns `-1`.
