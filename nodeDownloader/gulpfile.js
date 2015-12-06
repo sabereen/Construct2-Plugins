@@ -15,7 +15,7 @@ function set_info(info) {
 gulp.task('minify', function () {
   return gulp.src(['src/*.js'])
     .pipe(set_info(info))
-    .pipe(uglify())
+    // .pipe(uglify({mangle: false}))
     .pipe(gulp.dest('dist/files/nodeDownloader'));
 });
 
