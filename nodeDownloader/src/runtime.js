@@ -46,13 +46,13 @@ cr.plugins_.NodeDownloader = function(runtime)
         this.progress = 0;
         this.size = {};
         if (typeof require === "function") {
-					this.enable = true;
-					http = require('http');
-					fs = require('fs');
-					if (typeof http === "undefined" || typeof fs === "undefined")
-						this.enable = false;
+			this.enable = true;
+			http = require('http');
+			fs = require('fs');
+			if (typeof http === "undefined" || typeof fs === "undefined")
+				this.enable = false;
         } else {
-					this.enable = false;
+			this.enable = false;
         }
 	};
 
@@ -66,40 +66,36 @@ cr.plugins_.NodeDownloader = function(runtime)
             return;
         }
 
-        var self = this;
-
+        var self = this,        
+            file = fs['createWriteStream'](path)
         var req = http.get(url, function (res) {
-            self.size[tag] = Number(res.headers['content-length']);
-            res.setEncoding('binary');
-            var file = "";
-            res.on('data', function (chunk) {
-                file += chunk;
-                self.curTag = tag;
-                self.progress = Math.round(100*file.length/self.size[tag]);
-                self.runtime.trigger(pluginProto.cnds.OnProgress, self);
-            });
-            res.on('end', function () {
-                fs.writeFile(path, file, 'binary', function (err) {
-                    if (err) {
-                        self.curTag = tag;
-                        self.runtime.trigger(pluginProto.cnds.OnError, self);
-                        console.log("Can not save the downloaded file");
-                    }
-                    self.curTag = tag;
-                    self.runtime.trigger(pluginProto.cnds.OnFinished, self);
-                    delete self.size[tag];
-                });
-            });
-        });
+            self.size[tag] = Number(res['headers']['content-length'])
+            res['pipe'](file)
+            var received = 0
+            res['on']('data', function (chunk) {
+                received += chunk.length
+                self.curTag = tag
+                self.progress = Math.round(100*received/self.size[tag])
+                self.runtime.trigger(pluginProto.cnds.OnProgress, self)
+            })
+            res['on']('end', function () {
+                self.curTag = tag
+                self.runtime.trigger(pluginProto.cnds.OnFinished, self)
+                delete self.size[tag];
+            })
+            res['on']('error', function (err) {
+                self.curTag = tag
+                self.runtime.trigger(pluginProto.cnds.OnError, self)
+                console.log(err)
+            })
+        })
+        req['on']('error', function (e) {
+            self.curTag = tag
+            self.runtime.trigger(pluginProto.cnds.OnError, self)
+            console.log(e)
+        })
 
-        req.on('error', function (e) {
-            self.curTag = tag;
-            self.runtime.trigger(pluginProto.cnds.OnError, self);
-            console.log(e);
-        });
-
-        req.end();
-    }
+    };
     /****/
 	// called whenever an instance is created
 	instanceProto.onCreate = function ()
@@ -187,7 +183,7 @@ cr.plugins_.NodeDownloader = function(runtime)
 
 	//////////////////////////////////////
 	// Conditions
-	function Cnds() {};
+	function Cnds() {}
 
 	// the example condition
 	Cnds.prototype.OnError = function (tag)
@@ -211,7 +207,7 @@ cr.plugins_.NodeDownloader = function(runtime)
 
 	//////////////////////////////////////
 	// Actions
-	function Acts() {};
+	function Acts() {}
 
     Acts.prototype.StartDownload = function (tag, url, path)
 	{
@@ -224,7 +220,7 @@ cr.plugins_.NodeDownloader = function(runtime)
 
 	//////////////////////////////////////
 	// Expressions
-	function Exps() {};
+	function Exps() {}
 
 	Exps.prototype.Percent = function (ret)	// 'ret' must always be the first parameter - always return the expression's result through it!
 	{
