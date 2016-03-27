@@ -43,7 +43,7 @@ ___
 Get the total size of the file, in bytes. This expression is only accessible when downloading is in progress. So you can use it in `On progress` or `On completed` events. After that, it returns `-1`.
 
 ## To do
-- [ ] Compatibility with google closure compiler.
+- [x] Compatibility with google closure compiler.
 - [ ] Adding more ACEs.
 
 ##### Credits
