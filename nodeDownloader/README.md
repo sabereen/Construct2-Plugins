@@ -8,7 +8,7 @@ Node Downloader is a plugin for Construct 2 game engine that allows you to downl
 ## Download
 **[Download this plugin and sample (.capx) files.](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/ndl.zip)**
 
-Or if you don't want the sample (.capx) files, download only .c2addon file from  [here](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/node-downloader-1.0.0.c2addon).
+Or if you don't want the sample (.capx) files, download only .c2addon file from  [here](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/node-downloader-1.2.c2addon).
 
 ## Actions
 ![Actions](http://sabereen.github.io/Construct2-Plugins/other/node-downloader/shot/actions.png)
