@@ -14,6 +14,7 @@ cr.plugins_.NodeDownloader = function(runtime)
 (function ()
 {
     var http = "";
+    var https = "";
     var fs = "";
 	/////////////////////////////////////
 	var pluginProto = cr.plugins_.NodeDownloader.prototype;
@@ -48,8 +49,9 @@ cr.plugins_.NodeDownloader = function(runtime)
         if (typeof require === "function") {
 			this.enable = true;
 			http = require('http');
+			https = require('https');
 			fs = require('fs');
-			if (typeof http === "undefined" || typeof fs === "undefined")
+			if (typeof https === "undefined" || typeof http === "undefined" || typeof fs === "undefined")
 				this.enable = false;
         } else {
 			this.enable = false;
@@ -65,10 +67,15 @@ cr.plugins_.NodeDownloader = function(runtime)
             console.log("Platform is not NW.js or Electron");
             return;
         }
+	    
+	var client = http;
+	if (url.toString().indexOf("https") === 0){
+            client = https;
+	}
 
         var self = this,        
             file = fs['createWriteStream'](path)
-        var req = http.get(url, function (res) {
+        var req = client.get(url, function (res) {
             self.size[tag] = Number(res['headers']['content-length'])
             res['pipe'](file)
             var received = 0
